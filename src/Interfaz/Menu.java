@@ -32,13 +32,13 @@ public class Menu extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtInventarioTiempo = new javax.swing.JTextField();
-        txtProduccionTiempo = new javax.swing.JTextField();
-        txtEmpaquetadoTiempo = new javax.swing.JTextField();
-        txtSalidaTiempo = new javax.swing.JTextField();
-        txtProduccionCostos = new javax.swing.JTextField();
-        txtEmpaquetadoCostos = new javax.swing.JTextField();
-        txtSalidaCostos = new javax.swing.JTextField();
         txtInventarioCostos = new javax.swing.JTextField();
+        txtProduccionTiempo = new javax.swing.JTextField();
+        txtProduccionCostos = new javax.swing.JTextField();
+        txtEmpaquetadoTiempo = new javax.swing.JTextField();
+        txtEmpaquetadoCostos = new javax.swing.JTextField();
+        txtSalidaTiempo = new javax.swing.JTextField();
+        txtSalidaCostos = new javax.swing.JTextField();
         btnIniciar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,59 +52,59 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         jLabel2.setText("INVENTARIO");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         jLabel3.setText("PRODUCCIÓN");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         jLabel4.setText("EMPAQUETADO");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         jLabel5.setText("SALIDA");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         jLabel6.setText("TIEMPO (S)");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         jLabel7.setText("COSTOS (Q/s)");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, -1));
 
         txtInventarioTiempo.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
         txtInventarioTiempo.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        jPanel1.add(txtInventarioTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 120, -1));
-
-        txtProduccionTiempo.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
-        txtProduccionTiempo.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        jPanel1.add(txtProduccionTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 120, -1));
-
-        txtEmpaquetadoTiempo.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
-        txtEmpaquetadoTiempo.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        jPanel1.add(txtEmpaquetadoTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 120, -1));
-
-        txtSalidaTiempo.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
-        txtSalidaTiempo.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        jPanel1.add(txtSalidaTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 120, -1));
-
-        txtProduccionCostos.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
-        txtProduccionCostos.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        jPanel1.add(txtProduccionCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 120, -1));
-
-        txtEmpaquetadoCostos.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
-        txtEmpaquetadoCostos.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        jPanel1.add(txtEmpaquetadoCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 120, -1));
-
-        txtSalidaCostos.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
-        txtSalidaCostos.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        jPanel1.add(txtSalidaCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 120, -1));
+        jPanel1.add(txtInventarioTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 120, -1));
 
         txtInventarioCostos.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
         txtInventarioCostos.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        jPanel1.add(txtInventarioCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 120, -1));
+        jPanel1.add(txtInventarioCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 120, -1));
+
+        txtProduccionTiempo.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
+        txtProduccionTiempo.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        jPanel1.add(txtProduccionTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 120, -1));
+
+        txtProduccionCostos.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
+        txtProduccionCostos.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        jPanel1.add(txtProduccionCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 120, -1));
+
+        txtEmpaquetadoTiempo.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
+        txtEmpaquetadoTiempo.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        jPanel1.add(txtEmpaquetadoTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 120, -1));
+
+        txtEmpaquetadoCostos.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
+        txtEmpaquetadoCostos.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        jPanel1.add(txtEmpaquetadoCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 120, -1));
+
+        txtSalidaTiempo.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
+        txtSalidaTiempo.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        jPanel1.add(txtSalidaTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 120, -1));
+
+        txtSalidaCostos.setBackground(javax.swing.UIManager.getDefaults().getColor("textHighlight"));
+        txtSalidaCostos.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        jPanel1.add(txtSalidaCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 120, -1));
 
         btnIniciar.setBackground(new java.awt.Color(255, 153, 0));
         btnIniciar.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
@@ -120,7 +120,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

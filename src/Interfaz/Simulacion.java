@@ -16,20 +16,22 @@ public class Simulacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        panelTiempo = new javax.swing.JPanel();
+        btnRegresarMenu_Simulacion = new javax.swing.JButton();
+        btnReporte_Simulacion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         lblTiempo = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        panelSimulacion = new javax.swing.JPanel();
         lblPelota = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblEmpaquetado_Simulacion = new javax.swing.JLabel();
+        lblInventario_Simulacion = new javax.swing.JLabel();
+        lblSalida_Simulacion = new javax.swing.JLabel();
+        lblProduccion_Simulacion = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -39,88 +41,92 @@ public class Simulacion extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelTiempo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jButton1.setText("REGRESAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresarMenu_Simulacion.setBackground(new java.awt.Color(255, 51, 51));
+        btnRegresarMenu_Simulacion.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        btnRegresarMenu_Simulacion.setText("REGRESAR");
+        btnRegresarMenu_Simulacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegresarMenu_SimulacionActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 140, 40));
+        panelTiempo.add(btnRegresarMenu_Simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 140, 40));
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 255));
-        jButton2.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jButton2.setText("REPORTE");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 140, 40));
+        btnReporte_Simulacion.setBackground(new java.awt.Color(51, 51, 255));
+        btnReporte_Simulacion.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        btnReporte_Simulacion.setText("REPORTE");
+        panelTiempo.add(btnReporte_Simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 20, 140, 40));
 
         jLabel1.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         jLabel1.setText("Tiempo transcurrido:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
+        panelTiempo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
 
         lblTiempo.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         lblTiempo.setText("00:00");
-        jPanel1.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, -1, -1));
+        panelTiempo.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, -1, -1));
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setText("->");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setText("->");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setText("->");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, -1, -1));
+        panelSimulacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblPelota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/contento (2).png"))); // NOI18N
-        jPanel2.add(lblPelota, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+        lblPelota.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204), 3));
+        panelSimulacion.add(lblPelota, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 580, -1, -1));
 
-        jLabel10.setBackground(new java.awt.Color(0, 102, 255));
-        jLabel10.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel10.setOpaque(true);
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 170, 90));
+        lblEmpaquetado_Simulacion.setBackground(new java.awt.Color(0, 102, 255));
+        lblEmpaquetado_Simulacion.setForeground(new java.awt.Color(0, 51, 51));
+        lblEmpaquetado_Simulacion.setOpaque(true);
+        panelSimulacion.add(lblEmpaquetado_Simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, 220, 360));
 
-        jLabel2.setBackground(new java.awt.Color(204, 0, 0));
-        jLabel2.setOpaque(true);
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 170, 90));
+        lblInventario_Simulacion.setBackground(new java.awt.Color(204, 0, 0));
+        lblInventario_Simulacion.setOpaque(true);
+        panelSimulacion.add(lblInventario_Simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 220, 360));
 
-        jLabel3.setBackground(new java.awt.Color(0, 153, 51));
-        jLabel3.setOpaque(true);
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 170, 90));
+        lblSalida_Simulacion.setBackground(new java.awt.Color(0, 153, 51));
+        lblSalida_Simulacion.setOpaque(true);
+        panelSimulacion.add(lblSalida_Simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 100, 220, 360));
 
-        jLabel4.setBackground(new java.awt.Color(153, 0, 153));
-        jLabel4.setOpaque(true);
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 170, 90));
+        lblProduccion_Simulacion.setBackground(new java.awt.Color(153, 0, 153));
+        lblProduccion_Simulacion.setOpaque(true);
+        panelSimulacion.add(lblProduccion_Simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 220, 360));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cargando.gif"))); // NOI18N
+        panelSimulacion.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cargando.gif"))); // NOI18N
+        panelSimulacion.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cargando.gif"))); // NOI18N
+        panelSimulacion.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 270, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/sube.gif"))); // NOI18N
+        panelSimulacion.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/baja.gif"))); // NOI18N
+        panelSimulacion.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 450, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 771, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelSimulacion, javax.swing.GroupLayout.DEFAULT_SIZE, 1180, Short.MAX_VALUE)
+            .addComponent(panelTiempo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panelTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelSimulacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegresarMenu_SimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarMenu_SimulacionActionPerformed
         menu.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRegresarMenu_SimulacionActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         hiloTiempo = new Tiempo(lblTiempo); // Crea un nuevo objeto Tiempo
@@ -130,19 +136,21 @@ public class Simulacion extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnRegresarMenu_Simulacion;
+    private javax.swing.JButton btnReporte_Simulacion;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel lblEmpaquetado_Simulacion;
+    private javax.swing.JLabel lblInventario_Simulacion;
     private javax.swing.JLabel lblPelota;
+    private javax.swing.JLabel lblProduccion_Simulacion;
+    private javax.swing.JLabel lblSalida_Simulacion;
     private javax.swing.JLabel lblTiempo;
+    private javax.swing.JPanel panelSimulacion;
+    private javax.swing.JPanel panelTiempo;
     // End of variables declaration//GEN-END:variables
 }

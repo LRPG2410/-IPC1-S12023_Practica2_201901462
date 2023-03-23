@@ -1,12 +1,14 @@
 package Interfaz;
 
 import Codigo.*;
+import javax.swing.JLabel;
 
 public class Simulacion extends javax.swing.JFrame {
 
     Menu menu = new Menu();
     private Tiempo hiloTiempo;
     private Pelota hiloPelota;
+    private JLabel lblPelota;
 
     public Simulacion() {
         initComponents();
@@ -22,7 +24,6 @@ public class Simulacion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lblTiempo = new javax.swing.JLabel();
         panelSimulacion = new javax.swing.JPanel();
-        lblPelota = new javax.swing.JLabel();
         lblEmpaquetado_Simulacion = new javax.swing.JLabel();
         lblInventario_Simulacion = new javax.swing.JLabel();
         lblSalida_Simulacion = new javax.swing.JLabel();
@@ -66,57 +67,109 @@ public class Simulacion extends javax.swing.JFrame {
         lblTiempo.setText("00:00");
         panelTiempo.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, -1, -1));
 
-        panelSimulacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblPelota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/contento (2).png"))); // NOI18N
-        lblPelota.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204), 3));
-        panelSimulacion.add(lblPelota, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 580, -1, -1));
-
         lblEmpaquetado_Simulacion.setBackground(new java.awt.Color(0, 102, 255));
         lblEmpaquetado_Simulacion.setForeground(new java.awt.Color(0, 51, 51));
         lblEmpaquetado_Simulacion.setOpaque(true);
-        panelSimulacion.add(lblEmpaquetado_Simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, 220, 360));
 
         lblInventario_Simulacion.setBackground(new java.awt.Color(204, 0, 0));
         lblInventario_Simulacion.setOpaque(true);
-        panelSimulacion.add(lblInventario_Simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 220, 360));
 
         lblSalida_Simulacion.setBackground(new java.awt.Color(0, 153, 51));
         lblSalida_Simulacion.setOpaque(true);
-        panelSimulacion.add(lblSalida_Simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 100, 220, 360));
 
         lblProduccion_Simulacion.setBackground(new java.awt.Color(153, 0, 153));
         lblProduccion_Simulacion.setOpaque(true);
-        panelSimulacion.add(lblProduccion_Simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 220, 360));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cargando.gif"))); // NOI18N
-        panelSimulacion.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cargando.gif"))); // NOI18N
-        panelSimulacion.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cargando.gif"))); // NOI18N
-        panelSimulacion.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 270, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/sube.gif"))); // NOI18N
-        panelSimulacion.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/baja.gif"))); // NOI18N
-        panelSimulacion.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 450, -1, -1));
+
+        javax.swing.GroupLayout panelSimulacionLayout = new javax.swing.GroupLayout(panelSimulacion);
+        panelSimulacion.setLayout(panelSimulacionLayout);
+        panelSimulacionLayout.setHorizontalGroup(
+            panelSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSimulacionLayout.createSequentialGroup()
+                .addGroup(panelSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelSimulacionLayout.createSequentialGroup()
+                        .addGroup(panelSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelSimulacionLayout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addGroup(panelSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelSimulacionLayout.createSequentialGroup()
+                                        .addGap(500, 500, 500)
+                                        .addComponent(jLabel4))
+                                    .addGroup(panelSimulacionLayout.createSequentialGroup()
+                                        .addGap(200, 200, 200)
+                                        .addComponent(jLabel3))
+                                    .addComponent(lblInventario_Simulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(panelSimulacionLayout.createSequentialGroup()
+                                        .addGap(300, 300, 300)
+                                        .addComponent(lblProduccion_Simulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(panelSimulacionLayout.createSequentialGroup()
+                                .addGap(70, 70, 70)
+                                .addComponent(jLabel2)))
+                        .addGap(174, 174, 174)
+                        .addGroup(panelSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addGroup(panelSimulacionLayout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(jLabel6))
+                            .addGroup(panelSimulacionLayout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addComponent(lblSalida_Simulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(panelSimulacionLayout.createSequentialGroup()
+                        .addGap(630, 630, 630)
+                        .addComponent(lblEmpaquetado_Simulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        panelSimulacionLayout.setVerticalGroup(
+            panelSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSimulacionLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(panelSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelSimulacionLayout.createSequentialGroup()
+                        .addGroup(panelSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelSimulacionLayout.createSequentialGroup()
+                                .addGap(170, 170, 170)
+                                .addComponent(jLabel4))
+                            .addGroup(panelSimulacionLayout.createSequentialGroup()
+                                .addGap(170, 170, 170)
+                                .addComponent(jLabel3))
+                            .addComponent(lblProduccion_Simulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelSimulacionLayout.createSequentialGroup()
+                                .addGap(170, 170, 170)
+                                .addComponent(jLabel5)
+                                .addGap(158, 158, 158)
+                                .addComponent(jLabel6))
+                            .addComponent(lblSalida_Simulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblEmpaquetado_Simulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(2, 2, 2))
+                    .addGroup(panelSimulacionLayout.createSequentialGroup()
+                        .addComponent(lblInventario_Simulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelSimulacion, javax.swing.GroupLayout.DEFAULT_SIZE, 1180, Short.MAX_VALUE)
-            .addComponent(panelTiempo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelTiempo, javax.swing.GroupLayout.DEFAULT_SIZE, 1180, Short.MAX_VALUE)
+            .addComponent(panelSimulacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelSimulacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(panelSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -130,7 +183,7 @@ public class Simulacion extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         hiloTiempo = new Tiempo(lblTiempo); // Crea un nuevo objeto Tiempo
-        hiloPelota = new Pelota(lblPelota);
+        hiloPelota = new Pelota(lblPelota, lblInventario_Simulacion, panelSimulacion);
         hiloTiempo.start();
         hiloPelota.start();
     }//GEN-LAST:event_formWindowOpened
@@ -146,7 +199,6 @@ public class Simulacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel lblEmpaquetado_Simulacion;
     private javax.swing.JLabel lblInventario_Simulacion;
-    private javax.swing.JLabel lblPelota;
     private javax.swing.JLabel lblProduccion_Simulacion;
     private javax.swing.JLabel lblSalida_Simulacion;
     private javax.swing.JLabel lblTiempo;

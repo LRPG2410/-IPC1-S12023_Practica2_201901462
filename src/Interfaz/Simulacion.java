@@ -183,7 +183,7 @@ public class Simulacion extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         hiloTiempo = new Tiempo(lblTiempo); // Crea un nuevo objeto Tiempo
-        hiloPelota = new Pelota(lblPelota, lblInventario_Simulacion, panelSimulacion);
+        hiloPelota = new Pelota(lblPelota, lblInventario_Simulacion, lblSalida_Simulacion, panelSimulacion);
         hiloTiempo.start();
         hiloPelota.start();
     }//GEN-LAST:event_formWindowOpened

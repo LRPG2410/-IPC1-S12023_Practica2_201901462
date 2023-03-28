@@ -26,10 +26,11 @@ public class Pelota extends Thread {
     private JLabel lblContadorSalida;
     private JLabel lblContadorInicio;
     private JLabel lblContadorFinal;
+    private int[][] monkey;
 
     public Pelota(JLabel lblPelota, JLabel lblInventario_Simulacion, JLabel lblSalida_Simulacion, JPanel panel, JLabel lblPrueba,
             JLabel lblContadorInventario, JLabel lblContadorProduccion, JLabel lblContadorEmpaquetado, JLabel lblContadorSalida,
-            JLabel lblContadorInicio, JLabel lblContadorFinal, JLabel lblProduccion_Simulacion, JLabel lblEmpaquetado_Simulacion) {
+            JLabel lblContadorInicio, JLabel lblContadorFinal, JLabel lblProduccion_Simulacion, JLabel lblEmpaquetado_Simulacion, int[][] monkey) {
         this.lblPelota = lblPelota;
         this.lblInventario_Simulacion = lblInventario_Simulacion;
         this.lblSalida_Simulacion = lblSalida_Simulacion;
@@ -43,6 +44,7 @@ public class Pelota extends Thread {
         this.lblContadorFinal = lblContadorFinal;
         this.lblProduccion_Simulacion = lblProduccion_Simulacion;
         this.lblEmpaquetado_Simulacion = lblEmpaquetado_Simulacion;
+        this.monkey = monkey;
     }
 
     public void aparecerPelota() {
@@ -67,6 +69,22 @@ public class Pelota extends Thread {
         int valorActual = Integer.parseInt(label.getText());
         valorActual += valor;
         label.setText(String.valueOf(valorActual));
+    }
+
+    private boolean llegoAInventario() {
+        // Reemplaza los valores de las coordenadas y las dimensiones de lblInventario_Simulacion
+        int inventarioX = 235;
+        int inventarioY = 459;
+        int inventarioWidth = 220;
+        int inventarioHeight = lblInventario_Simulacion.getHeight();
+
+        return x >= inventarioX && x <= inventarioX + inventarioWidth
+                && y >= inventarioY && y <= inventarioY + inventarioHeight;
+    }
+
+    public void iniciarPelota() {
+        Thread hilo = new Thread(this);
+        hilo.start();
     }
 
     public void run() {
@@ -118,6 +136,9 @@ public class Pelota extends Thread {
                         lblPelota.setOpaque(true);
                         lblPelota.setBackground(colorEmpaquetado);
                     }
+                    if (x == 128 && y == 270) {
+                        Thread.sleep(monkey[0][0] * 1000);
+                    }
                     if (y < mitadInicio) {
                         moviendoArriba = false;
                         moviendoDerecha = true;
@@ -155,6 +176,10 @@ public class Pelota extends Thread {
                         lblPelota.setOpaque(true);
                         lblPelota.setBackground(colorSalida);
                     }
+                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    if (x == 429 && y == 267) {
+                        Thread.sleep(monkey[1][0] * 1000);
+                    }
                     // CONDICIONAL PARA DISMINUIR EL CONTADOR CUANDO LA PELOTA LLEGUE AL "x=535" de lblProduccion_Simulacion
 
                     //  -----   -----   -----   -----
@@ -186,6 +211,10 @@ public class Pelota extends Thread {
                         lblPelota.setOpaque(true);
                         lblPelota.setBackground(colorInventario);
                     }
+                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    if (x == 730 && y == 267) {
+                        Thread.sleep(monkey[2][0] * 1000);
+                    }
                     // CONDICIONAL PARA DISMINUIR EL CONTADOR CUANDO LA PELOTA LLEGUE AL "x=835" de lblEmpaquetado_Simulacion
 
                     //  -----   -----   -----   -----
@@ -216,6 +245,10 @@ public class Pelota extends Thread {
                         lblPelota.setBorder(newBorder);
                         lblPelota.setOpaque(true);
                         lblPelota.setBackground(colorProduccion);
+                    }
+                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    if (x == 1024 && y == 267) {
+                        Thread.sleep(monkey[3][0] * 1000);
                     }
                     if (x >= mitadSalida) {
                         moviendoDerecha = false;

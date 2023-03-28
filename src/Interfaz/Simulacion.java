@@ -1,7 +1,11 @@
 package Interfaz;
 
 import Codigo.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 public class Simulacion extends javax.swing.JFrame {
 
@@ -9,9 +13,11 @@ public class Simulacion extends javax.swing.JFrame {
     private Tiempo hiloTiempo;
     private Pelota hiloPelota;
     private JLabel lblPelota;
+    private int[][] monkey;
 
-    public Simulacion() {
+    public Simulacion(int[][] monkey) {
         initComponents();
+        this.monkey = monkey;
         //System.out.println(lblPrueba.getY() + " " + lblPrueba.getX());
     }
 
@@ -313,14 +319,26 @@ public class Simulacion extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         hiloTiempo = new Tiempo(lblTiempo); // Crea un nuevo objeto Tiempo
-        hiloPelota = new Pelota(lblPelota, lblInventario_Simulacion, lblSalida_Simulacion, panelSimulacion, lblPrueba, 
-                                lblContadorInventario, lblContadorProduccion, lblContadorEmpaquetado, lblContadorSalida,
-                                lblContadorInicio, lblContadorFinal, lblProduccion_Simulacion, lblEmpaquetado_Simulacion);
+        /*hiloPelota = new Pelota(lblPelota, lblInventario_Simulacion, lblSalida_Simulacion, panelSimulacion, lblPrueba,
+                lblContadorInventario, lblContadorProduccion, lblContadorEmpaquetado, lblContadorSalida,
+                lblContadorInicio, lblContadorFinal, lblProduccion_Simulacion, lblEmpaquetado_Simulacion, monkey);*/
         hiloTiempo.start();
     }//GEN-LAST:event_formWindowOpened
 
     private void lblFlechaInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFlechaInicioMouseClicked
-        hiloPelota.start();
+        int contadorInicio = Integer.parseInt(lblContadorInicio.getText());
+        int contadorFinal = Integer.parseInt(lblContadorFinal.getText());
+        if (contadorInicio == 0) {
+            JOptionPane.showMessageDialog(null, "YA NO HAY MÁS PELOTAS", "Información", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            hiloPelota = new Pelota(lblPelota, lblInventario_Simulacion, lblSalida_Simulacion, panelSimulacion, lblPrueba,
+                    lblContadorInventario, lblContadorProduccion, lblContadorEmpaquetado, lblContadorSalida,
+                    lblContadorInicio, lblContadorFinal, lblProduccion_Simulacion, lblEmpaquetado_Simulacion, monkey);
+            hiloPelota.iniciarPelota();
+        }
+        if (contadorFinal == 30) {
+            JOptionPane.showMessageDialog(null, "SIMULACIÓN FINALIZADA", "Información", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_lblFlechaInicioMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

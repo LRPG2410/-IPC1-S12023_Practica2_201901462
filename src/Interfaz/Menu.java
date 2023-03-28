@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 public class Menu extends javax.swing.JFrame {
 
     int[][] monkey = new int[4][2];
+    
 
     public boolean esEntero(String texto) {
         try {
@@ -132,6 +133,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
+
         if (esEntero(txtInventarioTiempo.getText()) == false || esEntero(txtInventarioCostos.getText()) == false
                 || esEntero(txtProduccionTiempo.getText()) == false || esEntero(txtProduccionCostos.getText()) == false
                 || esEntero(txtEmpaquetadoTiempo.getText()) == false || esEntero(txtEmpaquetadoCostos.getText()) == false
@@ -147,11 +149,12 @@ public class Menu extends javax.swing.JFrame {
             monkey[3][0] = Integer.parseInt(txtSalidaTiempo.getText());
             monkey[3][1] = Integer.parseInt(txtSalidaCostos.getText());
             JOptionPane.showMessageDialog(null, "Valores guardados", "Exito", JOptionPane.INFORMATION_MESSAGE);
-            Simulacion simulacion = new Simulacion();
+            Simulacion simulacion = new Simulacion(monkey);
             simulacion.setVisible(true);
         }
         
-         /*else if (Integer.parseInt(txtInventarioTiempo.getText()) == 0 || Integer.parseInt(txtInventarioCostos.getText()) == 0
+
+        /*else if (Integer.parseInt(txtInventarioTiempo.getText()) == 0 || Integer.parseInt(txtInventarioCostos.getText()) == 0
                 || Integer.parseInt(txtProduccionTiempo.getText()) == 0 || Integer.parseInt(txtProduccionCostos.getText()) == 0
                 || Integer.parseInt(txtEmpaquetadoTiempo.getText()) == 0 || Integer.parseInt(txtEmpaquetadoCostos.getText()) == 0
                 || Integer.parseInt(txtSalidaTiempo.getText()) == 0 || Integer.parseInt(txtSalidaCostos.getText()) == 0) {

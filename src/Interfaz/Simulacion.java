@@ -1,11 +1,12 @@
 package Interfaz;
 
 import Codigo.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.Timer;
 
 public class Simulacion extends javax.swing.JFrame {
 
@@ -67,6 +68,7 @@ public class Simulacion extends javax.swing.JFrame {
         btnRegresarMenu_Simulacion.setBackground(new java.awt.Color(255, 51, 51));
         btnRegresarMenu_Simulacion.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         btnRegresarMenu_Simulacion.setText("REGRESAR");
+        btnRegresarMenu_Simulacion.setEnabled(false);
         btnRegresarMenu_Simulacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarMenu_SimulacionActionPerformed(evt);
@@ -77,6 +79,12 @@ public class Simulacion extends javax.swing.JFrame {
         btnReporte_Simulacion.setBackground(new java.awt.Color(51, 51, 255));
         btnReporte_Simulacion.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         btnReporte_Simulacion.setText("REPORTE");
+        btnReporte_Simulacion.setEnabled(false);
+        btnReporte_Simulacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReporte_SimulacionActionPerformed(evt);
+            }
+        });
         panelTiempo.add(btnReporte_Simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 20, 140, 40));
 
         jLabel1.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
@@ -333,13 +341,58 @@ public class Simulacion extends javax.swing.JFrame {
         } else {
             hiloPelota = new Pelota(lblPelota, lblInventario_Simulacion, lblSalida_Simulacion, panelSimulacion, lblPrueba,
                     lblContadorInventario, lblContadorProduccion, lblContadorEmpaquetado, lblContadorSalida,
-                    lblContadorInicio, lblContadorFinal, lblProduccion_Simulacion, lblEmpaquetado_Simulacion, monkey);
+                    lblContadorInicio, lblContadorFinal, lblProduccion_Simulacion, lblEmpaquetado_Simulacion, monkey,
+            btnRegresarMenu_Simulacion, btnReporte_Simulacion);
             hiloPelota.iniciarPelota();
         }
         if (contadorFinal == 30) {
             JOptionPane.showMessageDialog(null, "SIMULACIÓN FINALIZADA", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_lblFlechaInicioMouseClicked
+
+    private void btnReporte_SimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporte_SimulacionActionPerformed
+        String nombreCompleto = "Luis Rodolfo Porras García";
+        String carnet = "201901462";
+
+        int costoInventario = monkey[0][1], costoProduccion = monkey[1][1], costoEmpaquetado = monkey[2][1], costoSalida = monkey[3][1];
+        int tiempoInventario = monkey[0][0], tiempoProduccion = monkey[1][0], tiempoEmpaquetado = monkey[2][0], tiempoSalida = monkey[3][0];
+
+        int costoTotalInventario = costoInventario * tiempoInventario * 30;
+        int costoTotalProduccion = costoProduccion * tiempoProduccion * 30;
+        int costoTotalEmpaquetado = costoEmpaquetado * tiempoEmpaquetado * 30;
+        int costoTotalSalida = costoSalida * tiempoSalida * 30;
+        int costoTotal = costoTotalInventario + costoTotalProduccion + costoTotalEmpaquetado + costoTotalSalida;
+
+        String htmlContenido = "<html>\n"
+                + "<head><title>Reporte</title></head>\n"
+                + "<body>\n"
+                + "<h1>Reporte de costos</h1>\n"
+                + "<table border='1'>\n"
+                + "<tr><th>Sector</th><th>Costo</th></tr>\n"
+                + "<tr><td>Inventario</td><td>" + costoTotalInventario + "</td></tr>\n"
+                + "<tr><td>Producción</td><td>" + costoTotalProduccion + "</td></tr>\n"
+                + "<tr><td>Empaquetado</td><td>" + costoTotalEmpaquetado + "</td></tr>\n"
+                + "<tr><td>Salida</td><td>" + costoTotalSalida + "</td></tr>\n"
+                + "<tr><td><b>Total</b></td><td><b>" + costoTotal + "</b></td></tr>\n"
+                + "</table>\n"
+                + "<p>Nombre completo: " + nombreCompleto + "</p>\n"
+                + "<p>Carnet: " + carnet + "</p>\n"
+                + "</body>\n"
+                + "</html>";
+
+        try {
+            File archivo = new File("reporte.html");
+            archivo.createNewFile();
+            try (FileWriter escritor = new FileWriter(archivo)) {
+                escritor.write(htmlContenido);
+            }
+            Desktop abridor = Desktop.getDesktop();
+            abridor.open(archivo);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_btnReporte_SimulacionActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegresarMenu_Simulacion;

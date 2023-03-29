@@ -2,9 +2,9 @@ package Codigo;
 
 import java.awt.Color;
 import java.awt.MediaTracker;
-import java.awt.Point;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
@@ -27,10 +27,13 @@ public class Pelota extends Thread {
     private JLabel lblContadorInicio;
     private JLabel lblContadorFinal;
     private int[][] monkey;
+    private JButton btnRegresarMenu_Simulacion;
+    private JButton btnReporte_Simulacion;
 
     public Pelota(JLabel lblPelota, JLabel lblInventario_Simulacion, JLabel lblSalida_Simulacion, JPanel panel, JLabel lblPrueba,
             JLabel lblContadorInventario, JLabel lblContadorProduccion, JLabel lblContadorEmpaquetado, JLabel lblContadorSalida,
-            JLabel lblContadorInicio, JLabel lblContadorFinal, JLabel lblProduccion_Simulacion, JLabel lblEmpaquetado_Simulacion, int[][] monkey) {
+            JLabel lblContadorInicio, JLabel lblContadorFinal, JLabel lblProduccion_Simulacion, JLabel lblEmpaquetado_Simulacion, int[][] monkey,
+            JButton btnRegresarMenu_Simulacion, JButton btnReporte_Simulacion) {
         this.lblPelota = lblPelota;
         this.lblInventario_Simulacion = lblInventario_Simulacion;
         this.lblSalida_Simulacion = lblSalida_Simulacion;
@@ -45,16 +48,18 @@ public class Pelota extends Thread {
         this.lblProduccion_Simulacion = lblProduccion_Simulacion;
         this.lblEmpaquetado_Simulacion = lblEmpaquetado_Simulacion;
         this.monkey = monkey;
+        this.btnRegresarMenu_Simulacion = btnRegresarMenu_Simulacion;
+        this.btnReporte_Simulacion = btnReporte_Simulacion;
     }
 
     public void aparecerPelota() {
         lblPelota = new JLabel();
         lblPelota.setBounds(x, y, 24, 24);
         // Direccipon computadora trabajo
-        //ImageIcon icon = new ImageIcon("C:/Users/sistemas2/Documents/NetBeansProjects/Practica2/src/Imagenes/Feliz.png");
+        ImageIcon icon = new ImageIcon("C:/Users/sistemas2/Documents/NetBeansProjects/Practica2/src/Imagenes/Feliz.png");
 
         //Direccion computadora casa
-        ImageIcon icon = new ImageIcon("C:/Users/Luis Porras/Documents/NetBeansProjects/Practica2/src/Imagenes/Feliz.png");
+        //ImageIcon icon = new ImageIcon("C:/Users/Luis Porras/Documents/NetBeansProjects/Practica2/src/Imagenes/Feliz.png");
         if (icon.getImageLoadStatus() == MediaTracker.COMPLETE) {
             lblPelota.setIcon(icon);
             lblPelota.setOpaque(false);
@@ -69,17 +74,6 @@ public class Pelota extends Thread {
         int valorActual = Integer.parseInt(label.getText());
         valorActual += valor;
         label.setText(String.valueOf(valorActual));
-    }
-
-    private boolean llegoAInventario() {
-        // Reemplaza los valores de las coordenadas y las dimensiones de lblInventario_Simulacion
-        int inventarioX = 235;
-        int inventarioY = 459;
-        int inventarioWidth = 220;
-        int inventarioHeight = lblInventario_Simulacion.getHeight();
-
-        return x >= inventarioX && x <= inventarioX + inventarioWidth
-                && y >= inventarioY && y <= inventarioY + inventarioHeight;
     }
 
     public void iniciarPelota() {
@@ -256,10 +250,17 @@ public class Pelota extends Thread {
                     }
                 } else if (moviendoAbajo) {
                     y += 3;
-                    if (y == 540 && !aumentarFinal) {
+                    if (y == 564 && !aumentarFinal) {
                         actualizarContador(lblContadorFinal, 1);
                         aumentarFinal = true;
                         disminuirInicio = false;
+                        int contadorFinal = Integer.parseInt(lblContadorFinal.getText());
+                        if (contadorFinal == 30){
+                            System.out.println(contadorFinal);
+                            btnRegresarMenu_Simulacion.setEnabled(true);
+                            btnReporte_Simulacion.setEnabled(true);
+                            
+                        }
                     }
                     // CONDICIONAL PARA DISMINUIR EL CONTADOR CUANDO LA PELOTA LLEGUE AL "y=459" de lblSalida_Simulacion
 
@@ -346,3 +347,14 @@ public class Pelota extends Thread {
 //int posicionY = lblPelota.getY();
 //System.out.println(posicionX + " " + posicionY);
                     ////////////////////////////////////////////////////////////////////////////
+
+    /*private boolean llegoAInventario() {
+        // Reemplaza los valores de las coordenadas y las dimensiones de lblInventario_Simulacion
+        int inventarioX = 235;
+        int inventarioY = 459;
+        int inventarioWidth = 220;
+        int inventarioHeight = lblInventario_Simulacion.getHeight();
+
+        return x >= inventarioX && x <= inventarioX + inventarioWidth
+                && y >= inventarioY && y <= inventarioY + inventarioHeight;
+    }*/

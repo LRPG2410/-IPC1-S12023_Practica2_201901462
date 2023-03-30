@@ -56,10 +56,10 @@ public class Pelota extends Thread {
         lblPelota = new JLabel();
         lblPelota.setBounds(x, y, 24, 24);
         // Direccipon computadora trabajo
-        ImageIcon icon = new ImageIcon("C:/Users/sistemas2/Documents/NetBeansProjects/Practica2/src/Imagenes/Feliz.png");
+        //ImageIcon icon = new ImageIcon("C:/Users/sistemas2/Documents/NetBeansProjects/Practica2/src/Imagenes/Feliz.png");
 
         //Direccion computadora casa
-        //ImageIcon icon = new ImageIcon("C:/Users/Luis Porras/Documents/NetBeansProjects/Practica2/src/Imagenes/Feliz.png");
+        ImageIcon icon = new ImageIcon("C:/Users/Luis Porras/Documents/NetBeansProjects/Practica2/src/Imagenes/Feliz.png");
         if (icon.getImageLoadStatus() == MediaTracker.COMPLETE) {
             lblPelota.setIcon(icon);
             lblPelota.setOpaque(false);
